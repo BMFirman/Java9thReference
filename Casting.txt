@@ -1,0 +1,14 @@
+Casting has three variations, using integer type like ints and floating values like doubles.
+
+For example when converting from an int to a byte and the int is larger than the byte,
+perform a modulo on the int by the range of the byte.
+
+When converting floating values and integer type the floating point is truncated,
+if the truncated value is to large for the resulting type it will be subject to a modulo operation.
+
+An example where automatic int conversion causes an error:
+	byte b = 50;
+	b = b * 2; // the value 100 is an int trying to be stored back into a byte
+
+	byte b = 50;
+	b = (byte) (b * 2);
