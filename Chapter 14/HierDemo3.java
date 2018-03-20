@@ -45,6 +45,10 @@ class HierDemo3 {
         if(iOb instanceof Gen<?>) {
             System.out.println("iOb is an instance of Gen");
         }
+
+        if(!(iOb instanceof Gen2<?>)) {
+            System.out.println("iOb is not an instance of Gen2");
+        }
         // this cannot be compiled generic info doesn't exist
         // at run time
         /*
