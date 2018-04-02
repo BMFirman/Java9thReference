@@ -36,7 +36,7 @@ class MyClass2 {
         str = "";
     }
 
-    String getVal() {
+    String getStr() {
         return str;
     }
 }
