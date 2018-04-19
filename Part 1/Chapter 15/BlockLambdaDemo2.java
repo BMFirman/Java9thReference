@@ -12,6 +12,7 @@ class BlockLambdaDemo2 {
             }
             return result;
         };
+
         System.out.println("Original: " + reverse.func("lambda"));
 
     }
