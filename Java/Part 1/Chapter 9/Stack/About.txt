@@ -1,0 +1,1 @@
+Chapter 10 will place a focus on exceptions. 
