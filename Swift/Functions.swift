@@ -90,6 +90,7 @@ func average(_ numbers: Double...) -> Double {
 
 print(average(1, 2, 3, 4, 5, 6))
 
+// has an effect outside of the scope of the function body
 func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
     a = b
@@ -102,23 +103,31 @@ print("\(someInt), \(anotherInt)")
 swapTwoInts(&someInt, &anotherInt)
 print("\(someInt), \(anotherInt)")
 
+// The type of a function is the inputs and the ret type
+func addInts(_ a: Int, _ b: Int) -> Int {
+    return a + b
+}
 
+var mathFunc: (Int, Int) -> Int = addInts
 
+func printMathResult(_ mathFunc: (Int, Int) ->
+            Int, _ a: Int, _ b: Int) {
+    print("Result: \(mathFunc(a,b))")
+}
+printMathResult(addInts, 3, 5)
 
+func stepForward(_ input: Int) -> Int {
+    return input + 1
+}
 
+func stepBackward(_ input: Int) -> Int {
+    return input - 1
+}
 
+func chooseStep(backward: Bool) -> (Int) -> Int {
+    return backward ? stepBackward : stepForward
+}
 
+var currentValue = 5
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+let closerToZero = chooseStep(backward: currentValue > 0)
